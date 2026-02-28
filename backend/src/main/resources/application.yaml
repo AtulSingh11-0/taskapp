@@ -29,8 +29,8 @@ server:
 # ── SpringDoc / Swagger ──
 springdoc:
   api-docs:
-    path: /api-docs
+    path: /api/v3/api-docs
   swagger-ui:
-    path: /swagger-ui.html
+    path: /api/swagger-ui.html
     operations-sorter: method
     tags-sorter: alpha

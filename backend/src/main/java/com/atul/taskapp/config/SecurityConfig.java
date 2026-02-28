@@ -35,8 +35,7 @@ public class SecurityConfig {
       JwtAuthenticationFilter jwtAuthFilter,
       UserDetailsService userDetailsService,
       JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint,
-      CustomAccessDeniedHandler customAccessDeniedHandler
-  ) {
+      CustomAccessDeniedHandler customAccessDeniedHandler) {
     this.jwtAuthFilter = jwtAuthFilter;
     this.userDetailsService = userDetailsService;
     this.jwtAuthenticationEntryPoint = jwtAuthenticationEntryPoint;
@@ -60,7 +59,9 @@ public class SecurityConfig {
                 "/swagger-ui/**",
                 "/swagger-ui.html",
                 "/api-docs/**",
-                "/v3/api-docs/**")
+                "/v3/api-docs/**",
+                "/api/swagger-ui/**",
+                "/api/v3/api-docs/**")
             .permitAll()
             // Admin endpoints
             .requestMatchers("/api/admin/**").hasRole("ADMIN")
