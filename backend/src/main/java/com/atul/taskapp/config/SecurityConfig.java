@@ -20,6 +20,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.cors.CorsUtils;
 
 @Configuration
 @EnableWebSecurity
@@ -65,6 +66,8 @@ public class SecurityConfig {
             .permitAll()
             // Admin endpoints
             .requestMatchers("/api/admin/**").hasRole("ADMIN")
+            // Permit pre-flight CORS requests
+            .requestMatchers(CorsUtils::isPreFlightRequest).permitAll()
             // Everything else requires authentication
             .anyRequest().authenticated())
         .authenticationProvider(authenticationProvider())
