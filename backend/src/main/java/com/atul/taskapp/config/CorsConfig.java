@@ -21,7 +21,8 @@ public class CorsConfig {
     configuration.setAllowedOrigins(List.of(allowedOrigins));
     configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"));
     configuration.setAllowedHeaders(List.of("Authorization", "Content-Type", "X-API-Version")); // Added X-API-Version
-    configuration.setExposedHeaders(List.of("Set-Cookie")); // Expose Set-Cookie so the browser can process the HttpOnly JWT
+    configuration.setExposedHeaders(List.of("Set-Cookie")); // Expose Set-Cookie so the browser can process the HttpOnly
+                                                            // JWT
     configuration.setAllowCredentials(true); // Crucial for HttpOnly Cookies
     configuration.setMaxAge(3600L);
 
