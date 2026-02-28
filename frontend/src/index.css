@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+@import "tailwindcss";
+
+/* Enable class-based dark mode (Tailwind v4 defaults to media query) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+
+  /* Light mode — warm neutral + red accent */
+  --color-td-red: #dc4c3e;
+  --color-td-red-hover: #c43e31;
+  --color-td-orange: #ff9933;
+  --color-td-blue: #4073ff;
+  --color-td-green: #058527;
+  --color-td-bg: #fafafa;
+  --color-td-surface: #ffffff;
+  --color-td-sidebar: #fcfaf8;
+  --color-td-border: #f0eeeb;
+  --color-td-border-strong: #e0ddd9;
+  --color-td-text: #202020;
+  --color-td-text-secondary: #666666;
+  --color-td-text-tertiary: #999999;
+  --color-td-hover: #f5f3f0;
+
+  /* Dark mode — deeper contrast, distinct from light */
+  --color-td-dark-bg: #1a1a2e;
+  --color-td-dark-surface: #16213e;
+  --color-td-dark-sidebar: #0f3460;
+  --color-td-dark-border: #2a2a4a;
+  --color-td-dark-text: #eaeaea;
+  --color-td-dark-text-secondary: #b0b0c0;
+  --color-td-dark-text-tertiary: #707090;
+  --color-td-dark-hover: #1e2a50;
+}
+
+html {
+  font-family: var(--font-sans);
+}
+
+body {
+  @apply bg-td-bg text-td-text antialiased;
+}
+.dark body {
+  @apply bg-td-dark-bg text-td-dark-text;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ccc;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #3a3a5a;
+}

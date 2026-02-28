@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Admin User",
+    "email": "admin@taskapp.com",
+    "password": "Admin@123",
+    "role": "ADMIN"
+  },
+  {
+    "name": "John Doe",
+    "email": "john@taskapp.com",
+    "password": "User@1234",
+    "role": "USER"
+  },
+  {
+    "name": "Jane Smith",
+    "email": "jane@taskapp.com",
+    "password": "User@1234",
+    "role": "USER"
+  },
+  {
+    "name": "Bob Wilson",
+    "email": "bob@taskapp.com",
+    "password": "User@1234",
+    "role": "USER"
+  }
+]

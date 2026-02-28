@@ -1,0 +1,98 @@
+[
+  {
+    "title": "Set up project architecture",
+    "description": "Define the folder structure, configure Spring Boot, set up security, and establish coding standards for the team.",
+    "status": "DONE",
+    "priority": "HIGH",
+    "dueDate": "2026-03-01",
+    "ownerEmail": "admin@taskapp.com"
+  },
+  {
+    "title": "Implement user authentication",
+    "description": "Build JWT-based login and registration endpoints with proper password hashing and token validation.",
+    "status": "DONE",
+    "priority": "HIGH",
+    "dueDate": "2026-03-05",
+    "ownerEmail": "john@taskapp.com"
+  },
+  {
+    "title": "Design database schema",
+    "description": "Create ERD diagrams and define MySQL table structures with proper indexing and relationships.",
+    "status": "IN_PROGRESS",
+    "priority": "HIGH",
+    "dueDate": "2026-03-10",
+    "ownerEmail": "jane@taskapp.com"
+  },
+  {
+    "title": "Build task CRUD API",
+    "description": "Implement create, read, update, and delete operations for the Task entity with pagination support.",
+    "status": "IN_PROGRESS",
+    "priority": "MEDIUM",
+    "dueDate": "2026-03-12",
+    "ownerEmail": "john@taskapp.com"
+  },
+  {
+    "title": "Write API documentation",
+    "description": "Set up Swagger/OpenAPI documentation with proper descriptions for all endpoints.",
+    "status": "TODO",
+    "priority": "MEDIUM",
+    "dueDate": "2026-03-15",
+    "ownerEmail": "jane@taskapp.com"
+  },
+  {
+    "title": "Set up Docker environment",
+    "description": "Create Dockerfiles and docker-compose configuration for local development and production deployment.",
+    "status": "TODO",
+    "priority": "MEDIUM",
+    "dueDate": "2026-03-18",
+    "ownerEmail": "bob@taskapp.com"
+  },
+  {
+    "title": "Implement role-based access control",
+    "description": "Add RBAC with ADMIN and USER roles, method-level security, and protected admin endpoints.",
+    "status": "IN_PROGRESS",
+    "priority": "HIGH",
+    "dueDate": "2026-03-08",
+    "ownerEmail": "admin@taskapp.com"
+  },
+  {
+    "title": "Add input validation",
+    "description": "Implement Jakarta Validation annotations on all DTOs and create a global exception handler for clean error responses.",
+    "status": "TODO",
+    "priority": "MEDIUM",
+    "dueDate": "2026-03-20",
+    "ownerEmail": "bob@taskapp.com"
+  },
+  {
+    "title": "Create frontend dashboard",
+    "description": "Build a React dashboard with Vite showing task statistics, recent tasks, and quick action buttons.",
+    "status": "TODO",
+    "priority": "LOW",
+    "dueDate": "2026-03-25",
+    "ownerEmail": "john@taskapp.com"
+  },
+  {
+    "title": "Performance optimization",
+    "description": "Add Redis caching for frequently accessed data, optimize database queries, and implement connection pooling.",
+    "status": "TODO",
+    "priority": "LOW",
+    "dueDate": "2026-03-30",
+    "ownerEmail": "admin@taskapp.com"
+  },
+  {
+    "title": "Write unit tests for services",
+    "description": "Create comprehensive unit tests for AuthService and TaskService using JUnit 5 and Mockito.",
+    "status": "TODO",
+    "priority": "MEDIUM",
+    "dueDate": "2026-03-22",
+    "ownerEmail": "jane@taskapp.com"
+  },
+  {
+    "title": "Deploy to staging environment",
+    "description": "Configure CI/CD pipeline for automated deployment to the staging server with health checks.",
+    "status": "TODO",
+    "priority": "LOW",
+    "dueDate": "2026-04-01",
+    "ownerEmail": "bob@taskapp.com"
+  }
+]

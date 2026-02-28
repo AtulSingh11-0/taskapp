@@ -1,0 +1,62 @@
+# ── Production Profile ──
+# All secrets via environment variables, minimal logging, schema validation only
+
+spring:
+  # ── MySQL DataSource ──
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 5
+      idle-timeout: 300000
+      connection-timeout: 20000
+      max-lifetime: 1200000
+
+  # ── JPA / Hibernate ──
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      "[hibernate.format_sql]": false
+
+  # ── Redis ──
+  data:
+    redis:
+      host: ${REDIS_HOST}
+      port: ${REDIS_PORT:6379}
+      timeout: 5000
+
+  # ── Cache ──
+  cache:
+    type: redis
+
+# ── JWT & Cache ──
+app:
+  jwt:
+    secret: ${JWT_SECRET}
+    expiration-ms: ${JWT_EXPIRATION_MS:86400000}
+    cookie:
+      secure: ${JWT_COOKIE_SECURE:true}
+  cache:
+    ttl-tasks: ${CACHE_TTL_TASKS:600}
+    ttl-lists: ${CACHE_TTL_LISTS:300}
+
+# ── Swagger (enabled for API Showcase) ──
+springdoc:
+  swagger-ui:
+    enabled: true
+  api-docs:
+    enabled: true
+
+# ── Logging (minimal) ──
+logging:
+  level:
+    root: WARN
+    "[com.atul.taskapp]": INFO
+    "[org.springframework.security]": WARN
+    "[org.hibernate.SQL]": WARN

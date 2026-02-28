@@ -1,0 +1,59 @@
+# ── Development Profile ──
+# Local MySQL, debug logging, schema auto-update, Swagger enabled
+
+spring:
+  # ── MySQL DataSource ──
+  datasource:
+    url: ${DB_URL:jdbc:mysql://localhost:3306/taskapp_db?createDatabaseIfNotExist=true}
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:12345}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 2
+      idle-timeout: 30000
+      connection-timeout: 20000
+
+  # ── JPA / Hibernate ──
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      "[hibernate.format_sql]": true
+
+  # ── Redis ──
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+      timeout: 5000
+
+  # ── Cache ──
+  cache:
+    type: redis
+
+# ── JWT & Cache ──
+app:
+  jwt:
+    secret: ${JWT_SECRET:4465764f6e6c794a57545365637265744b65792d4e6f74466f7250726f64756374696f6e2d506c65617365526f746174654265666f72654465706c6f79}
+    expiration-ms: ${JWT_EXPIRATION_MS:86400000}
+    cookie:
+      secure: false
+  cache:
+    ttl-tasks: ${CACHE_TTL_TASKS:600}
+    ttl-lists: ${CACHE_TTL_LISTS:300}
+
+# ── Swagger (enabled) ──
+springdoc:
+  swagger-ui:
+    enabled: true
+
+# ── Logging (verbose) ──
+logging:
+  level:
+    root: INFO
+    "[com.atul.taskapp]": DEBUG
+    "[org.springframework.security]": DEBUG
+    "[org.hibernate.SQL]": DEBUG
+    "[org.hibernate.orm.jdbc.bind]": TRACE

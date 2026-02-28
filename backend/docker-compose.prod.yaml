@@ -1,0 +1,67 @@
+# Full dev/prod Docker Compose — Backend + MySQL + Redis
+services:
+  backend:
+    container_name: taskapp-api
+    image: taskapp-api:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '8080:8080'
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+      DB_URL: jdbc:mysql://mysql:3306/taskapp_db?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      DB_USERNAME: taskapp_user
+      DB_PASSWORD: ${DB_PASSWORD:-taskapp_secret}
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      JWT_SECRET: ${JWT_SECRET:-cHJvZHVjdGlvbi1zZWNyZXQta2V5LXBsZWFzZS1yb3RhdGUtYmVmb3JlLWRlcGxveW1lbnQtdG8tcHJvZHVjdGlvbg==}
+      JWT_EXPIRATION_MS: 86400000
+    depends_on:
+      mysql:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - taskapp-network
+
+  mysql:
+    container_name: taskapp-db
+    image: 'mysql:8.4'
+    environment:
+      MYSQL_DATABASE: taskapp_db
+      MYSQL_USER: taskapp_user
+      MYSQL_PASSWORD: ${DB_PASSWORD:-taskapp_secret}
+      MYSQL_ROOT_PASSWORD: verysecret
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    networks:
+      - taskapp-network
+
+  redis:
+    container_name: taskapp-redis
+    image: 'redis:7-alpine'
+    ports:
+      - '6379:6379'
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - taskapp-network
+
+volumes:
+  mysql_data:
+  redis_data:
+
+networks:
+  taskapp-network:
+    driver: bridge
