@@ -18,9 +18,6 @@ export function AuthProvider({ children }) {
 
       // step-2: store non-sensitive user metadata in local storage
       localStorage.setItem("user", JSON.stringify(data));
-      if (data.token) {
-        localStorage.setItem("token", data.token);
-      }
 
       // step-3: update context state and return user data
       setUser(data);
@@ -42,9 +39,6 @@ export function AuthProvider({ children }) {
 
       // step-2: store non-sensitive user metadata in local storage
       localStorage.setItem("user", JSON.stringify(data));
-      if (data.token) {
-        localStorage.setItem("token", data.token);
-      }
 
       // step-3: update context state and return user data
       setUser(data);
@@ -64,7 +58,6 @@ export function AuthProvider({ children }) {
     } finally {
       // step-3: clear local state and local storage regardless of backend success
       localStorage.removeItem("user");
-      localStorage.removeItem("token");
       setUser(null);
     }
   };
