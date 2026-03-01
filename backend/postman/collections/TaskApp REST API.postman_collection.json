@@ -1,0 +1,1624 @@
+{
+  "info": {
+    "_postman_id": "0291e965-897b-4791-afb5-08abc568b749",
+    "name": "TaskApp REST API",
+    "description": "Task Management API with HttpOnly Cookie Auth and X-API-Version headers\n\nContact Support:\n Name: Atul Singh\n Email: cocatul11@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "api",
+      "item": [
+        {
+          "name": "tasks",
+          "item": [
+            {
+              "name": "{id}",
+              "item": [
+                {
+                  "name": "Get a task by ID",
+                  "id": "a94d4213-2d4d-4ee0-ad80-1a834c0b305c",
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-API-Version",
+                        "value": "1.0.0"
+                      },
+                      {
+                        "key": "X-API-Version",
+                        "value": "1",
+                        "description": "API Version Document Versioning"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/tasks/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "tasks",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id",
+                          "value": "14"
+                        }
+                      ]
+                    },
+                    "description": "Returns a specific task (owned by user or admin)"
+                  },
+                  "response": [
+                    {
+                      "id": "26816bf0-9eb6-4f12-8b0d-fe4a41bf0140",
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-API-Version",
+                            "value": "1.0.0"
+                          },
+                          {
+                            "key": "X-API-Version",
+                            "value": "1",
+                            "description": "API Version Document Versioning"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          },
+                          {
+                            "key": "jwt",
+                            "value": "<API Key>",
+                            "description": "Added as a part of security scheme: apikey"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/tasks/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "tasks",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "2914"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n\t\"id\": 9383,\n\t\"title\": \"string\",\n\t\"description\": \"string\",\n\t\"status\": \"TODO\",\n\t\"priority\": \"LOW\",\n\t\"dueDate\": \"2002-12-26\",\n\t\"ownerEmail\": \"string\",\n\t\"ownerName\": \"string\",\n\t\"createdAt\": \"1979-07-08T17:55:45.647Z\",\n\t\"updatedAt\": \"1954-11-08T07:33:23.533Z\"\n}"
+                    }
+                  ]
+                },
+                {
+                  "name": "Update a task",
+                  "id": "8c02d8c5-de74-409a-a813-85bc61bbc2c2",
+                  "request": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-API-Version",
+                        "value": "1.0.0"
+                      },
+                      {
+                        "key": "X-API-Version",
+                        "value": "1",
+                        "description": "API Version Document Versioning"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n\t\"title\": \"string\",\n\t\"description\": \"string\",\n\t\"status\": \"DONE\",\n\t\"priority\": \"MEDIUM\",\n\t\"dueDate\": \"1970-07-26\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/tasks/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "tasks",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id",
+                          "value": "2914"
+                        }
+                      ]
+                    },
+                    "description": "Updates a task (partial update supported)"
+                  },
+                  "response": [
+                    {
+                      "id": "e61e8b3c-1c6d-4ee3-aea2-efbd21274484",
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "X-API-Version",
+                            "value": "1.0.0"
+                          },
+                          {
+                            "key": "X-API-Version",
+                            "value": "1",
+                            "description": "API Version Document Versioning"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          },
+                          {
+                            "key": "jwt",
+                            "value": "<API Key>",
+                            "description": "Added as a part of security scheme: apikey"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n\t\"title\": \"string\",\n\t\"description\": \"string\",\n\t\"status\": \"DONE\",\n\t\"priority\": \"MEDIUM\",\n\t\"dueDate\": \"1970-07-26\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/tasks/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "tasks",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "2914"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n\t\"id\": 9383,\n\t\"title\": \"string\",\n\t\"description\": \"string\",\n\t\"status\": \"TODO\",\n\t\"priority\": \"LOW\",\n\t\"dueDate\": \"2002-12-26\",\n\t\"ownerEmail\": \"string\",\n\t\"ownerName\": \"string\",\n\t\"createdAt\": \"1979-07-08T17:55:45.647Z\",\n\t\"updatedAt\": \"1954-11-08T07:33:23.533Z\"\n}"
+                    }
+                  ]
+                },
+                {
+                  "name": "Delete a task",
+                  "id": "b6aa518a-a607-4190-ae13-f41ec2ed8570",
+                  "request": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-API-Version",
+                        "value": "1.0.0"
+                      },
+                      {
+                        "key": "X-API-Version",
+                        "value": "1",
+                        "description": "API Version Document Versioning"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/tasks/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "tasks",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id",
+                          "value": "2914"
+                        }
+                      ]
+                    },
+                    "description": "Deletes a task owned by the authenticated user"
+                  },
+                  "response": [
+                    {
+                      "id": "7d2d4c2c-2a39-4d0c-801a-20e5bcda08aa",
+                      "name": "NO CONTENT",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "key": "X-API-Version",
+                            "value": "1.0.0"
+                          },
+                          {
+                            "key": "X-API-Version",
+                            "value": "1",
+                            "description": "API Version Document Versioning"
+                          },
+                          {
+                            "key": "jwt",
+                            "value": "<API Key>",
+                            "description": "Added as a part of security scheme: apikey"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/tasks/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "tasks",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "2914"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "No Content",
+                      "code": 204,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "body": ""
+                    }
+                  ]
+                }
+              ],
+              "id": "008af680-83e4-45c3-a0c5-1c9794b45c30"
+            },
+            {
+              "name": "Get my tasks",
+              "id": "68ad0e69-bcbe-4b86-844c-03e0c85ee250",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-API-Version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "X-API-Version",
+                    "value": "1",
+                    "description": "API Version Document Versioning"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/tasks?page=0&size=10&sortBy=createdAt&sortDir=desc",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "tasks"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "0"
+                    },
+                    {
+                      "key": "size",
+                      "value": "10"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "createdAt"
+                    },
+                    {
+                      "key": "sortDir",
+                      "value": "desc"
+                    }
+                  ]
+                },
+                "description": "Returns paginated list of the authenticated user's tasks"
+              },
+              "response": [
+                {
+                  "id": "30151146-aed0-4402-a80d-0217c7d3d957",
+                  "name": "OK",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-API-Version",
+                        "value": "1.0.0"
+                      },
+                      {
+                        "key": "X-API-Version",
+                        "value": "1",
+                        "description": "API Version Document Versioning"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/tasks?page=0&size=10&sortBy=createdAt&sortDir=desc",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "tasks"
+                      ],
+                      "query": [
+                        {
+                          "key": "page",
+                          "value": "0"
+                        },
+                        {
+                          "key": "size",
+                          "value": "10"
+                        },
+                        {
+                          "key": "sortBy",
+                          "value": "createdAt"
+                        },
+                        {
+                          "key": "sortDir",
+                          "value": "desc"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Server",
+                      "value": "nginx/1.18.0 (Ubuntu)"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Sun, 01 Mar 2026 06:57:56 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Origin"
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Access-Control-Request-Method"
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Access-Control-Request-Headers"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-XSS-Protection",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-cache, no-store, max-age=0, must-revalidate"
+                    },
+                    {
+                      "key": "Pragma",
+                      "value": "no-cache"
+                    },
+                    {
+                      "key": "Expires",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Strict-Transport-Security",
+                      "value": "max-age=31536000 ; includeSubDomains"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "DENY"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"content\": [\n        {\n            \"id\": 14,\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"status\": \"TODO\",\n            \"priority\": \"LOW\",\n            \"dueDate\": \"2026-11-28\",\n            \"ownerEmail\": \"Willow_Boyer@hotmail.com\",\n            \"ownerName\": \"Eloise Block\",\n            \"createdAt\": \"2026-03-01T06:57:29.397750Z\",\n            \"updatedAt\": \"2026-03-01T06:57:29.397764Z\"\n        }\n    ],\n    \"page\": 0,\n    \"size\": 10,\n    \"totalElements\": 1,\n    \"totalPages\": 1,\n    \"last\": true\n}"
+                }
+              ]
+            },
+            {
+              "name": "Create a task",
+              "id": "98142c8a-ccd9-48bc-8305-c2f4aa4244cc",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-API-Version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "X-API-Version",
+                    "value": "1",
+                    "description": "API Version Document Versioning"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n\t\"priority\": \"LOW\",\n\t\"title\": \"string\",\n\t\"description\": \"string\",\n\t\"status\": \"TODO\",\n\t\"dueDate\": \"2026-11-28\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/tasks",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "tasks"
+                  ]
+                },
+                "description": "Creates a new task for the authenticated user"
+              },
+              "response": [
+                {
+                  "id": "fb721bad-5260-4a23-9096-0d04a3b4a4e4",
+                  "name": "CREATED",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-API-Version",
+                        "value": "1.0.0"
+                      },
+                      {
+                        "key": "X-API-Version",
+                        "value": "1",
+                        "description": "API Version Document Versioning"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n\t\"priority\": \"LOW\",\n\t\"title\": \"string\",\n\t\"description\": \"string\",\n\t\"status\": \"TODO\",\n\t\"dueDate\": \"2026-11-28\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/tasks",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "tasks"
+                      ]
+                    }
+                  },
+                  "status": "Created",
+                  "code": 201,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Server",
+                      "value": "nginx/1.18.0 (Ubuntu)"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Sun, 01 Mar 2026 06:57:29 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Origin"
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Access-Control-Request-Method"
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Access-Control-Request-Headers"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-XSS-Protection",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-cache, no-store, max-age=0, must-revalidate"
+                    },
+                    {
+                      "key": "Pragma",
+                      "value": "no-cache"
+                    },
+                    {
+                      "key": "Expires",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Strict-Transport-Security",
+                      "value": "max-age=31536000 ; includeSubDomains"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "DENY"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"id\": 14,\n    \"title\": \"string\",\n    \"description\": \"string\",\n    \"status\": \"TODO\",\n    \"priority\": \"LOW\",\n    \"dueDate\": \"2026-11-28\",\n    \"ownerEmail\": \"Willow_Boyer@hotmail.com\",\n    \"ownerName\": \"Eloise Block\",\n    \"createdAt\": \"2026-03-01T06:57:29.397750Z\",\n    \"updatedAt\": \"2026-03-01T06:57:29.397764Z\"\n}"
+                }
+              ]
+            }
+          ],
+          "id": "9e561687-2e75-41e5-a025-0994438f11a6"
+        },
+        {
+          "name": "auth",
+          "item": [
+            {
+              "name": "register",
+              "item": [
+                {
+                  "name": "Register a new user",
+                  "id": "f7e9c9cc-14e0-4bde-924f-72572b480c80",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-API-Version",
+                        "value": "1.0.0"
+                      },
+                      {
+                        "key": "X-API-Version",
+                        "value": "1",
+                        "description": "API Version Document Versioning",
+                        "disabled": true
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n\t\"email\": \"{{$randomEmail}}\",\n\t\"name\": \"{{$randomFullName}}\",\n\t\"password\": \"stringst\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/auth/register",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "auth",
+                        "register"
+                      ]
+                    },
+                    "description": "Creates a new user account and returns a JWT token in an HttpOnly cookie"
+                  },
+                  "response": [
+                    {
+                      "id": "205d17be-90a3-4e71-8b22-49a3770db947",
+                      "name": "CREATED",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "X-API-Version",
+                            "value": "1.0.0"
+                          },
+                          {
+                            "key": "X-API-Version",
+                            "value": "1",
+                            "description": "API Version Document Versioning",
+                            "disabled": true
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n\t\"email\": \"{{$randomEmail}}\",\n\t\"name\": \"{{$randomFullName}}\",\n\t\"password\": \"stringst\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/auth/register",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "auth",
+                            "register"
+                          ]
+                        }
+                      },
+                      "status": "Created",
+                      "code": 201,
+                      "_postman_previewlanguage": null,
+                      "header": [
+                        {
+                          "key": "Server",
+                          "value": "nginx/1.18.0 (Ubuntu)"
+                        },
+                        {
+                          "key": "Date",
+                          "value": "Sun, 01 Mar 2026 06:46:05 GMT"
+                        },
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        },
+                        {
+                          "key": "Transfer-Encoding",
+                          "value": "chunked"
+                        },
+                        {
+                          "key": "Connection",
+                          "value": "keep-alive"
+                        },
+                        {
+                          "key": "Vary",
+                          "value": "Origin"
+                        },
+                        {
+                          "key": "Vary",
+                          "value": "Access-Control-Request-Method"
+                        },
+                        {
+                          "key": "Vary",
+                          "value": "Access-Control-Request-Headers"
+                        },
+                        {
+                          "key": "Set-Cookie",
+                          "value": "jwt=eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiVVNFUiIsInN1YiI6IldpbGxvd19Cb3llckBob3RtYWlsLmNvbSIsImlhdCI6MTc3MjM0NzU2NSwiZXhwIjoxNzcyNDMzOTY1fQ.yrsbz30vKbBifiLbWiIWuvsNQBkt6rDKwYHtccv6KVpyZc2CWvvOp33vTc9IR23_zsQNo6DGUOePlxt98h17Zg; Path=/; Max-Age=86400; Expires=Mon, 02 Mar 2026 06:46:05 GMT; Secure; HttpOnly; SameSite=None"
+                        },
+                        {
+                          "key": "X-Content-Type-Options",
+                          "value": "nosniff"
+                        },
+                        {
+                          "key": "X-XSS-Protection",
+                          "value": "0"
+                        },
+                        {
+                          "key": "Cache-Control",
+                          "value": "no-cache, no-store, max-age=0, must-revalidate"
+                        },
+                        {
+                          "key": "Pragma",
+                          "value": "no-cache"
+                        },
+                        {
+                          "key": "Expires",
+                          "value": "0"
+                        },
+                        {
+                          "key": "Strict-Transport-Security",
+                          "value": "max-age=31536000 ; includeSubDomains"
+                        },
+                        {
+                          "key": "X-Frame-Options",
+                          "value": "DENY"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n    \"email\": \"Willow_Boyer@hotmail.com\",\n    \"role\": \"USER\",\n    \"name\": \"Eloise Block\"\n}"
+                    }
+                  ]
+                }
+              ],
+              "id": "40c43ca5-5dae-45ae-9571-8340cc321f62"
+            },
+            {
+              "name": "logout",
+              "item": [
+                {
+                  "name": "Logout",
+                  "id": "658ef320-403a-4209-b4d8-92e7a9b25230",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-API-Version",
+                        "value": "1.0.0"
+                      },
+                      {
+                        "key": "X-API-Version",
+                        "value": "1",
+                        "description": "API Version Document Versioning"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/auth/logout",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "auth",
+                        "logout"
+                      ]
+                    },
+                    "description": "Clears the JWT HttpOnly cookie"
+                  },
+                  "response": [
+                    {
+                      "id": "8e4f57fb-76b5-4a84-a57d-6570a7ef7cc4",
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "X-API-Version",
+                            "value": "1.0.0"
+                          },
+                          {
+                            "key": "X-API-Version",
+                            "value": "1",
+                            "description": "API Version Document Versioning"
+                          },
+                          {
+                            "key": "jwt",
+                            "value": "<API Key>",
+                            "description": "Added as a part of security scheme: apikey"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/auth/logout",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "auth",
+                            "logout"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "body": ""
+                    }
+                  ]
+                }
+              ],
+              "id": "7a4b3631-b9e8-4095-ad30-cc91b5b39306"
+            },
+            {
+              "name": "login",
+              "item": [
+                {
+                  "name": "Login",
+                  "id": "6b410d9c-8908-49e2-9aaf-6d08ed89a688",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-API-Version",
+                        "value": "1.0.0"
+                      },
+                      {
+                        "key": "X-API-Version",
+                        "value": "1",
+                        "description": "API Version Document Versioning"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n\t\"email\": \"admin@taskapp.com\",\n\t\"password\": \"Admin@123\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/auth/login",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "auth",
+                        "login"
+                      ]
+                    },
+                    "description": "Authenticates user credentials and returns a JWT token in an HttpOnly cookie"
+                  },
+                  "response": [
+                    {
+                      "id": "888edfbb-b37c-4bd8-b12f-555e92d7ff33",
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "X-API-Version",
+                            "value": "1.0.0"
+                          },
+                          {
+                            "key": "X-API-Version",
+                            "value": "1",
+                            "description": "API Version Document Versioning"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n\t\"email\": \"Willow_Boyer@hotmail.com\",\n\t\"password\": \"stringst\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/auth/login",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "auth",
+                            "login"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": null,
+                      "header": [
+                        {
+                          "key": "Server",
+                          "value": "nginx/1.18.0 (Ubuntu)"
+                        },
+                        {
+                          "key": "Date",
+                          "value": "Sun, 01 Mar 2026 06:46:49 GMT"
+                        },
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        },
+                        {
+                          "key": "Transfer-Encoding",
+                          "value": "chunked"
+                        },
+                        {
+                          "key": "Connection",
+                          "value": "keep-alive"
+                        },
+                        {
+                          "key": "Vary",
+                          "value": "Origin"
+                        },
+                        {
+                          "key": "Vary",
+                          "value": "Access-Control-Request-Method"
+                        },
+                        {
+                          "key": "Vary",
+                          "value": "Access-Control-Request-Headers"
+                        },
+                        {
+                          "key": "Set-Cookie",
+                          "value": "jwt=eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiVVNFUiIsInN1YiI6IldpbGxvd19Cb3llckBob3RtYWlsLmNvbSIsImlhdCI6MTc3MjM0NzYwOSwiZXhwIjoxNzcyNDM0MDA5fQ.WjjTo4zxSC-v09_i9BdKf-vg5HH_HpteRMEJKUjVAJ_hiYCebUxsga7I48WMHYM-nuUX7O0VZWlhbxxShN7PlA; Path=/; Max-Age=86400; Expires=Mon, 02 Mar 2026 06:46:49 GMT; Secure; HttpOnly; SameSite=None"
+                        },
+                        {
+                          "key": "X-Content-Type-Options",
+                          "value": "nosniff"
+                        },
+                        {
+                          "key": "X-XSS-Protection",
+                          "value": "0"
+                        },
+                        {
+                          "key": "Cache-Control",
+                          "value": "no-cache, no-store, max-age=0, must-revalidate"
+                        },
+                        {
+                          "key": "Pragma",
+                          "value": "no-cache"
+                        },
+                        {
+                          "key": "Expires",
+                          "value": "0"
+                        },
+                        {
+                          "key": "Strict-Transport-Security",
+                          "value": "max-age=31536000 ; includeSubDomains"
+                        },
+                        {
+                          "key": "X-Frame-Options",
+                          "value": "DENY"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n    \"email\": \"Willow_Boyer@hotmail.com\",\n    \"role\": \"USER\",\n    \"name\": \"Eloise Block\"\n}"
+                    }
+                  ]
+                }
+              ],
+              "id": "5044360f-024f-4f1c-ab92-62ea0b425fa4"
+            }
+          ],
+          "id": "2421ad9f-718e-44f4-a7c9-da8b1e551304"
+        },
+        {
+          "name": "admin",
+          "item": [
+            {
+              "name": "users",
+              "item": [
+                {
+                  "name": "Get all users (Admin)",
+                  "id": "8ed26bc9-e2b5-4b99-b979-c083aae434cd",
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-API-Version",
+                        "value": "1.0.0"
+                      },
+                      {
+                        "key": "X-API-Version",
+                        "value": "1",
+                        "description": "API Version Document Versioning"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/admin/users",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "admin",
+                        "users"
+                      ]
+                    },
+                    "description": "Returns a list of all registered users"
+                  },
+                  "response": [
+                    {
+                      "id": "97447045-d20b-4f8d-911d-ab3bab45e29f",
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-API-Version",
+                            "value": "1.0.0"
+                          },
+                          {
+                            "key": "X-API-Version",
+                            "value": "1",
+                            "description": "API Version Document Versioning"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/admin/users",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "admin",
+                            "users"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": null,
+                      "header": [
+                        {
+                          "key": "Server",
+                          "value": "nginx/1.18.0 (Ubuntu)"
+                        },
+                        {
+                          "key": "Date",
+                          "value": "Sun, 01 Mar 2026 06:59:37 GMT"
+                        },
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        },
+                        {
+                          "key": "Transfer-Encoding",
+                          "value": "chunked"
+                        },
+                        {
+                          "key": "Connection",
+                          "value": "keep-alive"
+                        },
+                        {
+                          "key": "Vary",
+                          "value": "Origin"
+                        },
+                        {
+                          "key": "Vary",
+                          "value": "Access-Control-Request-Method"
+                        },
+                        {
+                          "key": "Vary",
+                          "value": "Access-Control-Request-Headers"
+                        },
+                        {
+                          "key": "X-Content-Type-Options",
+                          "value": "nosniff"
+                        },
+                        {
+                          "key": "X-XSS-Protection",
+                          "value": "0"
+                        },
+                        {
+                          "key": "Cache-Control",
+                          "value": "no-cache, no-store, max-age=0, must-revalidate"
+                        },
+                        {
+                          "key": "Pragma",
+                          "value": "no-cache"
+                        },
+                        {
+                          "key": "Expires",
+                          "value": "0"
+                        },
+                        {
+                          "key": "Strict-Transport-Security",
+                          "value": "max-age=31536000 ; includeSubDomains"
+                        },
+                        {
+                          "key": "X-Frame-Options",
+                          "value": "DENY"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "[\n    {\n        \"id\": 1,\n        \"name\": \"Admin User\",\n        \"email\": \"admin@taskapp.com\",\n        \"role\": \"ADMIN\",\n        \"createdAt\": \"2026-02-28T22:20:50.895917Z\"\n    },\n    {\n        \"id\": 2,\n        \"name\": \"John Doe\",\n        \"email\": \"john@taskapp.com\",\n        \"role\": \"USER\",\n        \"createdAt\": \"2026-02-28T22:20:51.116006Z\"\n    },\n    {\n        \"id\": 3,\n        \"name\": \"Jane Smith\",\n        \"email\": \"jane@taskapp.com\",\n        \"role\": \"USER\",\n        \"createdAt\": \"2026-02-28T22:20:51.266649Z\"\n    },\n    {\n        \"id\": 4,\n        \"name\": \"Bob Wilson\",\n        \"email\": \"bob@taskapp.com\",\n        \"role\": \"USER\",\n        \"createdAt\": \"2026-02-28T22:20:51.422067Z\"\n    },\n    {\n        \"id\": 5,\n        \"name\": \"string\",\n        \"email\": \"user@example.com\",\n        \"role\": \"USER\",\n        \"createdAt\": \"2026-03-01T05:26:15.194468Z\"\n    },\n    {\n        \"id\": 6,\n        \"name\": \"Eloise Block\",\n        \"email\": \"Willow_Boyer@hotmail.com\",\n        \"role\": \"USER\",\n        \"createdAt\": \"2026-03-01T06:46:05.822759Z\"\n    }\n]"
+                    }
+                  ]
+                }
+              ],
+              "id": "733b63ec-acad-4ec2-a5ca-a9a7a99c7b26"
+            },
+            {
+              "name": "tasks",
+              "item": [
+                {
+                  "name": "{id}",
+                  "item": [
+                    {
+                      "name": "Delete any task (Admin)",
+                      "id": "84f57ad5-f107-41b6-85e2-8fb9bb34968e",
+                      "request": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "key": "X-API-Version",
+                            "value": "1.0.0"
+                          },
+                          {
+                            "key": "X-API-Version",
+                            "value": "1",
+                            "description": "API Version Document Versioning"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/admin/tasks/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "admin",
+                            "tasks",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "14"
+                            }
+                          ]
+                        },
+                        "description": "Deletes any task by ID regardless of ownership"
+                      },
+                      "response": [
+                        {
+                          "id": "517a34a9-8dbb-43e6-bff6-b70ad15b5f0d",
+                          "name": "NO CONTENT",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "key": "X-API-Version",
+                                "value": "1.0.0"
+                              },
+                              {
+                                "key": "X-API-Version",
+                                "value": "1",
+                                "description": "API Version Document Versioning"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/admin/tasks/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "admin",
+                                "tasks",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "14"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "No Content",
+                          "code": 204,
+                          "_postman_previewlanguage": null,
+                          "header": [
+                            {
+                              "key": "Server",
+                              "value": "nginx/1.18.0 (Ubuntu)"
+                            },
+                            {
+                              "key": "Date",
+                              "value": "Sun, 01 Mar 2026 07:00:51 GMT"
+                            },
+                            {
+                              "key": "Connection",
+                              "value": "keep-alive"
+                            },
+                            {
+                              "key": "Vary",
+                              "value": "Origin"
+                            },
+                            {
+                              "key": "Vary",
+                              "value": "Access-Control-Request-Method"
+                            },
+                            {
+                              "key": "Vary",
+                              "value": "Access-Control-Request-Headers"
+                            },
+                            {
+                              "key": "X-Content-Type-Options",
+                              "value": "nosniff"
+                            },
+                            {
+                              "key": "X-XSS-Protection",
+                              "value": "0"
+                            },
+                            {
+                              "key": "Cache-Control",
+                              "value": "no-cache, no-store, max-age=0, must-revalidate"
+                            },
+                            {
+                              "key": "Pragma",
+                              "value": "no-cache"
+                            },
+                            {
+                              "key": "Expires",
+                              "value": "0"
+                            },
+                            {
+                              "key": "Strict-Transport-Security",
+                              "value": "max-age=31536000 ; includeSubDomains"
+                            },
+                            {
+                              "key": "X-Frame-Options",
+                              "value": "DENY"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": null
+                        }
+                      ]
+                    }
+                  ],
+                  "id": "76d6dea8-42fe-4855-bf36-65c09fd76f16"
+                },
+                {
+                  "name": "Get all tasks (Admin)",
+                  "id": "a3864d36-7b14-41f5-9c71-0d7b516ea20a",
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-API-Version",
+                        "value": "1.0.0"
+                      },
+                      {
+                        "key": "X-API-Version",
+                        "value": "1",
+                        "description": "API Version Document Versioning"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/admin/tasks?page=0&size=10&sortBy=createdAt&sortDir=desc",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "admin",
+                        "tasks"
+                      ],
+                      "query": [
+                        {
+                          "key": "page",
+                          "value": "0"
+                        },
+                        {
+                          "key": "size",
+                          "value": "10"
+                        },
+                        {
+                          "key": "sortBy",
+                          "value": "createdAt"
+                        },
+                        {
+                          "key": "sortDir",
+                          "value": "desc"
+                        }
+                      ]
+                    },
+                    "description": "Returns paginated list of all tasks across all users"
+                  },
+                  "response": [
+                    {
+                      "id": "9da92443-7bab-4d65-9f40-05655ccd59e1",
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-API-Version",
+                            "value": "1.0.0"
+                          },
+                          {
+                            "key": "X-API-Version",
+                            "value": "1",
+                            "description": "API Version Document Versioning"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/admin/tasks?page=0&size=10&sortBy=createdAt&sortDir=desc",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "admin",
+                            "tasks"
+                          ],
+                          "query": [
+                            {
+                              "key": "page",
+                              "value": "0"
+                            },
+                            {
+                              "key": "size",
+                              "value": "10"
+                            },
+                            {
+                              "key": "sortBy",
+                              "value": "createdAt"
+                            },
+                            {
+                              "key": "sortDir",
+                              "value": "desc"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": null,
+                      "header": [
+                        {
+                          "key": "Server",
+                          "value": "nginx/1.18.0 (Ubuntu)"
+                        },
+                        {
+                          "key": "Date",
+                          "value": "Sun, 01 Mar 2026 07:00:08 GMT"
+                        },
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        },
+                        {
+                          "key": "Transfer-Encoding",
+                          "value": "chunked"
+                        },
+                        {
+                          "key": "Connection",
+                          "value": "keep-alive"
+                        },
+                        {
+                          "key": "Vary",
+                          "value": "Origin"
+                        },
+                        {
+                          "key": "Vary",
+                          "value": "Access-Control-Request-Method"
+                        },
+                        {
+                          "key": "Vary",
+                          "value": "Access-Control-Request-Headers"
+                        },
+                        {
+                          "key": "X-Content-Type-Options",
+                          "value": "nosniff"
+                        },
+                        {
+                          "key": "X-XSS-Protection",
+                          "value": "0"
+                        },
+                        {
+                          "key": "Cache-Control",
+                          "value": "no-cache, no-store, max-age=0, must-revalidate"
+                        },
+                        {
+                          "key": "Pragma",
+                          "value": "no-cache"
+                        },
+                        {
+                          "key": "Expires",
+                          "value": "0"
+                        },
+                        {
+                          "key": "Strict-Transport-Security",
+                          "value": "max-age=31536000 ; includeSubDomains"
+                        },
+                        {
+                          "key": "X-Frame-Options",
+                          "value": "DENY"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n    \"content\": [\n        {\n            \"id\": 14,\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"status\": \"TODO\",\n            \"priority\": \"LOW\",\n            \"dueDate\": \"2026-11-28\",\n            \"ownerEmail\": \"Willow_Boyer@hotmail.com\",\n            \"ownerName\": \"Eloise Block\",\n            \"createdAt\": \"2026-03-01T06:57:29.397750Z\",\n            \"updatedAt\": \"2026-03-01T06:57:29.397764Z\"\n        },\n        {\n            \"id\": 13,\n            \"title\": \"submit the internship assignment\",\n            \"description\": \"need to submit the internship assignment to http://primetrade.ai/\",\n            \"status\": \"IN_PROGRESS\",\n            \"priority\": \"HIGH\",\n            \"dueDate\": \"2026-03-01\",\n            \"ownerEmail\": \"user@example.com\",\n            \"ownerName\": \"string\",\n            \"createdAt\": \"2026-03-01T05:41:45.186655Z\",\n            \"updatedAt\": \"2026-03-01T05:42:24.067043Z\"\n        },\n        {\n            \"id\": 12,\n            \"title\": \"Deploy to staging environment\",\n            \"description\": \"Configure CI/CD pipeline for automated deployment to the staging server with health checks.\",\n            \"status\": \"TODO\",\n            \"priority\": \"LOW\",\n            \"dueDate\": \"2026-04-01\",\n            \"ownerEmail\": \"bob@taskapp.com\",\n            \"ownerName\": \"Bob Wilson\",\n            \"createdAt\": \"2026-02-28T22:20:51.544211Z\",\n            \"updatedAt\": \"2026-02-28T22:20:51.544232Z\"\n        },\n        {\n            \"id\": 11,\n            \"title\": \"Write unit tests for services\",\n            \"description\": \"Create comprehensive unit tests for AuthService and TaskService using JUnit 5 and Mockito.\",\n            \"status\": \"TODO\",\n            \"priority\": \"MEDIUM\",\n            \"dueDate\": \"2026-03-22\",\n            \"ownerEmail\": \"jane@taskapp.com\",\n            \"ownerName\": \"Jane Smith\",\n            \"createdAt\": \"2026-02-28T22:20:51.533994Z\",\n            \"updatedAt\": \"2026-02-28T22:20:51.534013Z\"\n        },\n        {\n            \"id\": 10,\n            \"title\": \"Performance optimization\",\n            \"description\": \"Add Redis caching for frequently accessed data, optimize database queries, and implement connection pooling.\",\n            \"status\": \"TODO\",\n            \"priority\": \"LOW\",\n            \"dueDate\": \"2026-03-30\",\n            \"ownerEmail\": \"admin@taskapp.com\",\n            \"ownerName\": \"Admin User\",\n            \"createdAt\": \"2026-02-28T22:20:51.524650Z\",\n            \"updatedAt\": \"2026-02-28T22:20:51.524668Z\"\n        },\n        {\n            \"id\": 9,\n            \"title\": \"Create frontend dashboard\",\n            \"description\": \"Build a React dashboard with Vite showing task statistics, recent tasks, and quick action buttons.\",\n            \"status\": \"TODO\",\n            \"priority\": \"LOW\",\n            \"dueDate\": \"2026-03-25\",\n            \"ownerEmail\": \"john@taskapp.com\",\n            \"ownerName\": \"John Doe\",\n            \"createdAt\": \"2026-02-28T22:20:51.515791Z\",\n            \"updatedAt\": \"2026-02-28T22:20:51.515811Z\"\n        },\n        {\n            \"id\": 8,\n            \"title\": \"Add input validation\",\n            \"description\": \"Implement Jakarta Validation annotations on all DTOs and create a global exception handler for clean error responses.\",\n            \"status\": \"TODO\",\n            \"priority\": \"MEDIUM\",\n            \"dueDate\": \"2026-03-20\",\n            \"ownerEmail\": \"bob@taskapp.com\",\n            \"ownerName\": \"Bob Wilson\",\n            \"createdAt\": \"2026-02-28T22:20:51.505414Z\",\n            \"updatedAt\": \"2026-02-28T22:20:51.505432Z\"\n        },\n        {\n            \"id\": 7,\n            \"title\": \"Implement role-based access control\",\n            \"description\": \"Add RBAC with ADMIN and USER roles, method-level security, and protected admin endpoints.\",\n            \"status\": \"IN_PROGRESS\",\n            \"priority\": \"HIGH\",\n            \"dueDate\": \"2026-03-08\",\n            \"ownerEmail\": \"admin@taskapp.com\",\n            \"ownerName\": \"Admin User\",\n            \"createdAt\": \"2026-02-28T22:20:51.496574Z\",\n            \"updatedAt\": \"2026-02-28T22:20:51.496588Z\"\n        },\n        {\n            \"id\": 6,\n            \"title\": \"Set up Docker environment\",\n            \"description\": \"Create Dockerfiles and docker-compose configuration for local development and production deployment.\",\n            \"status\": \"TODO\",\n            \"priority\": \"MEDIUM\",\n            \"dueDate\": \"2026-03-18\",\n            \"ownerEmail\": \"bob@taskapp.com\",\n            \"ownerName\": \"Bob Wilson\",\n            \"createdAt\": \"2026-02-28T22:20:51.488575Z\",\n            \"updatedAt\": \"2026-02-28T22:20:51.488652Z\"\n        },\n        {\n            \"id\": 5,\n            \"title\": \"Write API documentation\",\n            \"description\": \"Set up Swagger/OpenAPI documentation with proper descriptions for all endpoints.\",\n            \"status\": \"TODO\",\n            \"priority\": \"MEDIUM\",\n            \"dueDate\": \"2026-03-15\",\n            \"ownerEmail\": \"jane@taskapp.com\",\n            \"ownerName\": \"Jane Smith\",\n            \"createdAt\": \"2026-02-28T22:20:51.480593Z\",\n            \"updatedAt\": \"2026-02-28T22:20:51.480608Z\"\n        }\n    ],\n    \"page\": 0,\n    \"size\": 10,\n    \"totalElements\": 14,\n    \"totalPages\": 2,\n    \"last\": false\n}"
+                    }
+                  ]
+                }
+              ],
+              "id": "643a6727-3b31-4d20-9018-a7bd348d2973"
+            }
+          ],
+          "id": "7ca72712-c093-4397-8a3b-768c3d019e1d"
+        }
+      ],
+      "id": "0f746a9a-2844-428c-8f41-c54268b3a6bd"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "jwt",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "id": "80f630bd-f393-4312-a6d0-84e53442d080",
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "id": "c4008ad3-881e-4f31-9135-a73d4f193812",
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "id": "94e32924-751b-408f-be1f-d0fed28998c9",
+      "key": "baseUrl",
+      "value": "https://taskapp-api.duckdns.org"
+    },
+    {
+      "id": "91c08fc3-1236-491b-a341-68c02f02b072",
+      "key": "apiKey",
+      "value": ""
+    }
+  ]
+}
