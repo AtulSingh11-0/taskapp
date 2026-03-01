@@ -67,7 +67,7 @@ public class SecurityConfig {
             // Admin endpoints
             .requestMatchers("/api/admin/**").hasRole("ADMIN")
             // Permit pre-flight CORS requests
-            .requestMatchers(CorsUtils::isPreFlightRequest).permitAll()
+            // .requestMatchers(CorsUtils::isPreFlightRequest).permitAll()
             // Everything else requires authentication
             .anyRequest().authenticated())
         .authenticationProvider(authenticationProvider())

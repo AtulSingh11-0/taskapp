@@ -12,17 +12,17 @@ import java.util.List;
 @Configuration
 public class CorsConfig {
 
-  @Value("${app.cors.allowed-origins:http://localhost:5173}")
-  private String[] allowedOrigins;
+  @Value("#{'${app.cors.allowed-origins:http://localhost:5173}'.split(',')}")
+  private List<String> allowedOrigins;
 
   @Bean
   public CorsConfigurationSource corsConfigurationSource() {
     CorsConfiguration configuration = new CorsConfiguration();
-    configuration.setAllowedOrigins(List.of(allowedOrigins));
-    configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"));
-    configuration.setAllowedHeaders(List.of("Authorization", "Content-Type", "X-API-Version")); // Added X-API-Version
-    configuration.setExposedHeaders(List.of("Set-Cookie")); // Expose Set-Cookie so the browser can process the HttpOnly
-    configuration.setAllowCredentials(true); // Crucial for HttpOnly Cookies
+    configuration.setAllowedOrigins(allowedOrigins);
+    configuration.setAllowedMethods(List.of("*"));
+    configuration.setAllowedHeaders(List.of("*"));
+    configuration.setExposedHeaders(List.of("Set-Cookie"));
+    configuration.setAllowCredentials(true);
     configuration.setMaxAge(3600L);
 
     UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
