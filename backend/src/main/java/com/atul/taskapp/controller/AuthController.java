@@ -70,7 +70,7 @@ public class AuthController {
         .secure(secureCookie)
         .path("/")
         .maxAge(0) // expire immediately
-        .sameSite("Strict")
+        .sameSite("None")
         .build();
 
     // step-2: return response entity with the expired cookie
@@ -86,7 +86,7 @@ public class AuthController {
         .secure(secureCookie)
         .path("/")
         .maxAge(24 * 60 * 60)
-        .sameSite("Strict")
+        .sameSite("None")
         .build();
   }
 }

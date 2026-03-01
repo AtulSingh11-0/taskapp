@@ -55,6 +55,10 @@ springdoc:
   api-docs:
     enabled: true
 
+# ── Server ──
+server:
+  forward-headers-strategy: framework
+
 # ── Logging (minimal) ──
 logging:
   level:
