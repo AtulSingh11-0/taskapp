@@ -37,8 +37,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
   protected void doFilterInternal(
       HttpServletRequest request,
       HttpServletResponse response,
-      FilterChain filterChain
-  ) throws ServletException, IOException {
+      FilterChain filterChain) throws ServletException, IOException {
 
     String jwt = null;
     if (request.getCookies() != null) {
@@ -47,6 +46,14 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
           .map(Cookie::getValue)
           .findFirst()
           .orElse(null);
+    }
+
+    // Fallback for browsers that block cross-site cookies
+    if (jwt == null) {
+      String authHeader = request.getHeader("Authorization");
+      if (authHeader != null && authHeader.startsWith("Bearer ")) {
+        jwt = authHeader.substring(7);
+      }
     }
 
     if (jwt == null) {

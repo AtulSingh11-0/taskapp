@@ -71,11 +71,15 @@ api.interceptors.response.use(
           break;
         }
         case 401:
-          // Unauthorized — clear auth and redirect to login
+          // Unauthorized — clear local storage auth data
           localStorage.removeItem("token");
           localStorage.removeItem("user");
-          // Only show toast if not already on login page
-          if (!window.location.pathname.includes("/login")) {
+
+          // If already on login page, show the specific invalid credentials error
+          if (window.location.pathname.includes("/login")) {
+            toast.error(message || "Invalid email or password.");
+          } else {
+            // Otherwise, it was a session expiration
             toast.error("Session expired. Please log in again.");
             window.location.href = "/login";
           }

@@ -32,8 +32,7 @@ public class AuthService {
       UserRepository userRepository,
       PasswordEncoder passwordEncoder,
       JwtService jwtService,
-      AuthenticationManager authenticationManager
-  ) {
+      AuthenticationManager authenticationManager) {
     this.userRepository = userRepository;
     this.passwordEncoder = passwordEncoder;
     this.jwtService = jwtService;
@@ -67,7 +66,7 @@ public class AuthService {
         user);
 
     // step-4: prepare and return auth result
-    AuthResponse response = new AuthResponse(user.getEmail(), user.getRole().name(), user.getName());
+    AuthResponse response = new AuthResponse(token, user.getEmail(), user.getRole().name(), user.getName());
     return new AuthResult(token, response);
   }
 
@@ -88,7 +87,7 @@ public class AuthService {
     log.info("User logged in successfully: {}", user.getEmail());
 
     // step-4: prepare and return auth result
-    AuthResponse response = new AuthResponse(user.getEmail(), user.getRole().name(), user.getName());
+    AuthResponse response = new AuthResponse(token, user.getEmail(), user.getRole().name(), user.getName());
     return new AuthResult(token, response);
   }
 }
